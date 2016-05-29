@@ -124,9 +124,9 @@ cookbook_file "/etc/apache2/sites-available/000-default.conf" do
   group "root"
 end
 
-apache_site "000-default.conf" do
-  enable true
-end
+#apache_site "" do
+#  enable true
+#end
 
 service "apache2" do
  action :restart
