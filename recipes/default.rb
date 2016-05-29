@@ -76,9 +76,18 @@ bash "create_database" do
   code <<-EOH
     mysql -uroot -pP11xhDNhs4hmw -e "create database webapp-01-db;"
     mysql -uroot -pP11xhDNhs4hmw -e "grant all privileges on webapp-01-db.* to teamwebapp01@localhost identified by 'zwsIFHa3ZLd';"
-    mysql -u teamwebapp01 -pzwsIFHa3ZLd webapp-01-db < /srv/dbs/database-webapp-01/mysql/data-0001.sql
   EOH
 end
+
+#bash "create_database" do
+#  user "root"
+#  ignore_failure true
+#  code <<-EOH
+#    mysql -uroot -pP11xhDNhs4hmw -e "create database webapp-01-db;"
+#    mysql -uroot -pP11xhDNhs4hmw -e "grant all privileges on webapp-01-db.* to teamwebapp01@localhost identified by 'zwsIFHa3ZLd';"
+#    mysql -u teamwebapp01 -pzwsIFHa3ZLd webapp-01-db < /srv/dbs/database-webapp-01/mysql/data-0001.sql
+#  EOH
+#end
 
 #bash "install_app" do
 #  user "root"
