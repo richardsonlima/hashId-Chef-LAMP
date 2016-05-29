@@ -7,10 +7,16 @@
 echo -e "\033[1;34m [+] Install GIT Client \033[m";
 sudo apt-get update &&  sudo apt-get install git-core lynx -y
 
+echo -e "\033[1;34m [+] Checking if chef  exists \033[m";
+if [ ! -f "/usr/bin/chef-solo" ]; then
 echo -e "\033[1;34m [+] Install Chef Solo \033[m";
 curl -L https://www.opscode.com/chef/install.sh | sudo bash
 >> ~/.bash_profile && source ~/.bash_profile
 sudo chef-solo -v
+else
+  echo -e "\033[1;34m [+] Chef OK \033[m";
+
+fi
 
 echo -e "\033[1;34m [+] Download and configure CHEF-REPO structure \033[m";
 wget http://github.com/opscode/chef-repo/tarball/master
