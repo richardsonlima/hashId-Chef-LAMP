@@ -9,7 +9,8 @@ sudo apt-get update &&  sudo apt-get install git-core lynx -y
 
 echo -e "\033[1;34m [+] Checking if chef  exists \033[m";
 if [ ! -f "/usr/bin/chef-solo" ]; then
-echo -e "\033[1;34m [+] Install Chef Solo \033[m";
+echo -e "\033[1;31m [+] Chef Solo not found \033[m";
+echo -e "\033[1;34m [+] Installing Chef Solo \033[m";
 curl -L https://www.opscode.com/chef/install.sh | sudo bash
 >> ~/.bash_profile && source ~/.bash_profile
 sudo chef-solo -v
