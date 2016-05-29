@@ -2,12 +2,17 @@
 ------------
 * Cookbook install and configure: Apache2 + PHP5 + MySQL5
 * Test: Ubuntu Server 14.04.4 LTS
-* Database Name: webapp-01-db (user: teamwebapp01 / pass: zwsIFHa3ZLd)
+* Database Name: webappdb (user: teamwebapp01 / pass: zwsIFHa3ZLd)
 * Root MySQL password: P11xhDNhs4hmw
 
 chef-solo is an open source version of the chef-client that allows using cookbooks with nodes
 without requiring access to a Chef server.
 chef-solo runs locally and requires that a cookbook
+
+See this in action::
+
+![alt tag](https://raw.githubusercontent.com/richardsonlima/hashId-Chef-LAMP/master/images/running-001.jpg)
+
 
 - Auto install - Fully Automated LAMP with Chef Solo - Coming soon :weary:
 ------------
@@ -86,5 +91,5 @@ ps -ef | grep apache |grep -v grep && ps -ef|grep mysql|grep -v grep
 
 * Test:
 ``` bash
-  http://localhost/index.php
+  lynx http://localhost/index.php
 ```
