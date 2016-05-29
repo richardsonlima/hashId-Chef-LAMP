@@ -117,8 +117,22 @@ cookbook_file "/etc/php5/apache2/php.ini" do
   group "root"
 end
 
+cookbook_file "/etc/apache2/sites-available/000-default.conf" do
+  source "000-default.conf"
+  mode 0644
+  owner "root"
+  group "root"
+end
+
 service "apache2" do
  action :restart
+end
+
+cookbook_file "/var/www/html/index.html" do
+  source "index.html"
+  mode 0755
+  owner "www-data"
+  group "www-data"
 end
 
 cookbook_file "/var/www/html/index.php" do
@@ -127,6 +141,14 @@ cookbook_file "/var/www/html/index.php" do
   owner "www-data"
   group "www-data"
 end
+
+cookbook_file "/var/www/html/info.php" do
+  source "index.php"
+  mode 0755
+  owner "www-data"
+  group "www-data"
+end
+
 
 
 #service "webapp-01-server" do
