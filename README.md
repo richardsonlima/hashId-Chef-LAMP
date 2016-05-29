@@ -76,7 +76,7 @@ sudo chown root:  /opt/chef-repo/lamp.json
 
 * Execute CHEF-SOLO
 ``` bash
-sudo chef-solo -c /opt/chef-repo/solo.rb -j /opt/chef-repo/lamp.json
+sudo /usr/bin/chef-solo -c /opt/chef-repo/solo.rb -j /opt/chef-repo/lamp.json
 ```
 
 * Status services

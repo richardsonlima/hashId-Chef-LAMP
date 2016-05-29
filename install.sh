@@ -48,7 +48,7 @@ EOF
 sudo chown root:  /opt/chef-repo/lamp.json
 
 echo -e "\033[1;34m [+] Execute CHEF-SOLO \033[m";
-sudo chef-solo -c /opt/chef-repo/solo.rb -j /opt/chef-repo/lamp.json
+sudo /usr/bin/chef-solo -c /opt/chef-repo/solo.rb -j /opt/chef-repo/lamp.json
 
 echo -e "\033[1;34m [+] See service status \033[m";
 ps -ef | grep apache |grep -v grep && ps -ef|grep mysql|grep -v grep
