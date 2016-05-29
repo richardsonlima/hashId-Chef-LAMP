@@ -4,22 +4,22 @@
 
 # set -x
 
-printf "\033[0;33m [+] Install GIT Client \033[0m\n\n"
+echo -e "\033[1;34m [+] Install GIT Client \033[m";
 sudo apt-get update &&  sudo apt-get install git-core lynx -y
 
-printf "\033[0;33m [+] Install Chef Solo \033[0m\n\n"
+echo -e "\033[1;34m [+] Install Chef Solo \033[m";
 curl -L https://www.opscode.com/chef/install.sh | sudo bash
 >> ~/.bash_profile && source ~/.bash_profile
 sudo chef-solo -v
 
-printf "\033[0;33m [+] Download and configure CHEF-REPO structure \033[0m\n\n"
+echo -e "\033[1;34m [+] Download and configure CHEF-REPO structure \033[m";
 wget http://github.com/opscode/chef-repo/tarball/master
 tar -zxvf master
 sudo mkdir -p /opt/chef-repo
 sudo mv chef-chef-repo-*/ /opt/chef-repo
 sudo mkdir /opt/chef-repo/.chef
 
-printf "\033[0;33m [+] Configure cookbook \033[0m\n\n"
+echo -e "\033[1;34m [+] Configure cookbook \033[m";
 sudo touch /opt/chef-repo/.chef/knife.rb
 sudo chown `whoami`: /opt/chef-repo/.chef/knife.rb
 sudo cat << EOF > /opt/chef-repo/.chef/knife.rb
@@ -27,7 +27,7 @@ cookbook_path [ '/opt/chef-repo/cookbooks' ]
 EOF
 sudo chown root: /opt/chef-repo/.chef/knife.rb
 
-printf "\033[0;33m [+] Configure solo.rb \033[0m\n\n"
+echo -e "\033[1;34m [+] Configure solo.rb \033[m";
 sudo touch /opt/chef-repo/solo.rb
 sudo chown `whoami`: /opt/chef-repo/solo.rb
 sudo cat << EOF > /opt/chef-repo/solo.rb
@@ -36,10 +36,10 @@ cookbook_path "/opt/chef-repo/cookbooks"
 EOF
 sudo chown root: /opt/chef-repo/solo.rb
 
-printf "\033[0;33m [+] Downloading cookbook \033[0m\n\n"
+echo -e "\033[1;34m [+] Downloading cookbook \033[m";
 sudo git clone https://github.com/richardsonlima/hashId-Chef_LAMP.git -l /opt/chef-repo/cookbooks/lamp
 
-printf "\033[0;33m [+] Creating your json \033[0m\n\n"
+echo -e "\033[1;34m [+] Creating your json\033[m";
 sudo touch /opt/chef-repo/lamp.json
 sudo chown `whoami`: /opt/chef-repo/lamp.json
 sudo cat << EOF > /opt/chef-repo/lamp.json
@@ -47,11 +47,11 @@ sudo cat << EOF > /opt/chef-repo/lamp.json
 EOF
 sudo chown root:  /opt/chef-repo/lamp.json
 
-printf "\033[0;33m [+] Execute CHEF-SOLO \033[0m\n\n"
+echo -e "\033[1;34m [+] Execute CHEF-SOLO \033[m";
 sudo chef-solo -c /opt/chef-repo/solo.rb -j /opt/chef-repo/lamp.json
 
-printf "\033[0;33m [+] See service status \033[0m\n\n"
+echo -e "\033[1;34m [+] See service status \033[m";
 ps -ef | grep apache |grep -v grep && ps -ef|grep mysql|grep -v grep
 
-printf "\033[0;33m [+] Accessing Zabbix Web Interface \033[0m\n\n"
+echo -e "\033[1;34m [+] Accessing Apache Web Interface \033[m";
 lynx http://localhost/index.php
