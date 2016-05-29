@@ -37,7 +37,7 @@ EOF
 sudo chown root: /opt/chef-repo/solo.rb
 
 echo -e "\033[1;34m [+] Downloading cookbook \033[m";
-sudo git clone https://github.com/richardsonlima/hashId-Chef_LAMP.git -l /opt/chef-repo/cookbooks/lamp
+sudo git clone https://github.com/richardsonlima/hashId-Chef-LAMP.git -l /opt/chef-repo/cookbooks/lamp
 
 echo -e "\033[1;34m [+] Creating your json\033[m";
 sudo touch /opt/chef-repo/lamp.json
