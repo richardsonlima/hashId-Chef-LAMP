@@ -14,7 +14,7 @@ See this in action::
 ![alt tag](https://raw.githubusercontent.com/richardsonlima/hashId-Chef-LAMP/master/images/running-001.jpg)
 
 
-- Auto install - Fully Automated LAMP with Chef Solo - Coming soon :weary:
+- Auto install - Fully Automated LAMP with Chef Solo - Works fine :sunglasses:
 ------------
 curl -L https://raw.githubusercontent.com/richardsonlima/hashId-Chef-LAMP/master/bootstrap.sh | sudo bash
 
