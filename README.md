@@ -82,5 +82,4 @@ ps -ef | grep apache |grep -v grep && ps -ef|grep mysql|grep -v grep
 ```   
 
 * Test:
-
-  http://localhost/
+  http://localhost/index.php
