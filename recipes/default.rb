@@ -124,6 +124,10 @@ cookbook_file "/etc/apache2/sites-available/000-default.conf" do
   group "root"
 end
 
+apache_site "000-default.conf" do
+  enable true
+end
+
 service "apache2" do
  action :restart
 end
@@ -143,7 +147,7 @@ cookbook_file "/var/www/html/index.php" do
 end
 
 cookbook_file "/var/www/html/info.php" do
-  source "index.php"
+  source "info.php"
   mode 0755
   owner "www-data"
   group "www-data"
