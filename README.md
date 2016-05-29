@@ -16,7 +16,7 @@ See this in action::
 
 - Auto install - Fully Automated LAMP with Chef Solo - Coming soon :weary:
 ------------
-curl -L https://raw.githubusercontent.com/richardsonlima/hashId-Chef-LAMP/master/install.sh | sudo bash
+curl -L https://raw.githubusercontent.com/richardsonlima/hashId-Chef-LAMP/master/bootstrap.sh | sudo bash
 
 
 - HandsOn install - Fully Automated LAMP with Chef Solo - Works fine :sunglasses:
@@ -82,6 +82,11 @@ sudo chown root:  /opt/chef-repo/lamp.json
 * Execute CHEF-SOLO
 ``` bash
 sudo /usr/bin/chef-solo -c /opt/chef-repo/solo.rb -j /opt/chef-repo/lamp.json
+```
+
+* Enable default site and reload apache2
+``` bash
+sudo a2ensite 000-default.conf && sudo service apache2 reload
 ```
 
 * Status services
