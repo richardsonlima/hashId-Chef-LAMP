@@ -11,6 +11,7 @@ chef-solo runs locally and requires that a cookbook
 
 - Auto install - Fully Automated LAMP with Chef Solo - Coming soon :weary:
 ------------
+curl -L https://raw.githubusercontent.com/richardsonlima/hashId-Chef-LAMP/master/install.sh | sudo bash
 
 
 - HandsOn install - Fully Automated LAMP with Chef Solo - Works fine :sunglasses:
@@ -82,6 +83,6 @@ ps -ef | grep apache |grep -v grep && ps -ef|grep mysql|grep -v grep
 ```   
 
 * Test:
-``` bash 
+``` bash
   http://localhost/index.php
 ```
