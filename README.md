@@ -25,6 +25,8 @@ sudo apt-get update &&  sudo apt-get install git-core
 * Install Chef Solo
 ``` bash
 curl -L https://www.opscode.com/chef/install.sh | sudo bash
+>> ~/.bash_profile && source ~/.bash_profile
+sudo chef-solo -v
 ```
 
 * Download and configure CHEF-REPO structure
@@ -59,7 +61,7 @@ sudo chown root: /opt/chef-repo/solo.rb
 
 * Download cookbook
 ``` bash
-sudo git clone https://github.com/richardsonlima/hashId-Chef_LAMP.git -l /opt/chef-repo/cookbooks/lamp
+sudo git clone https://github.com/richardsonlima/hashId-Chef-LAMP.git -l /opt/chef-repo/cookbooks/lamp
 ```
 
 * Create your json (/opt/chef-repo/lamp.json) - Add line
